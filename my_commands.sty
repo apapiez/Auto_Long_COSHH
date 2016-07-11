@@ -1,0 +1,217 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{my_commands}[11072016 Special commands for autocoshh]
+
+\RequirePackage{tikz}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{xcolor}
+\RequirePackage{tabularx}
+\RequirePackage{colortbl}
+\RequirePackage{array}
+
+\definecolor{white}{RGB}{255,255,255}
+
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{999999}
+
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+
+\newcommand{\test}[1]{Hello #1}
+
+\newcommand{\COSHHEADER}[0]{
+\begin{tikzpicture}
+\node [rectangle,draw=black!80,thick, fill=lightgray, anchor=north, minimum width=.8\paperwidth, minimum height=1.9cm] (box) at (current page.north){};
+\node [anchor=north,yshift=1cm] (university) at (box.center){\Huge{Northumbria University}};
+\node [anchor=north,yshift=0.2cm] (faculty) at (box.center){Faculty of Health and Life Sciences};
+\node [anchor=north,yshift=-0.1cm] (coshh) at (box.center){\scriptsize{COSHH Risk assessment}};
+\end{tikzpicture}}
+
+\newcommand{\detailtable}[7]{
+\begin{table}[h !]
+\centering
+\begin{tabular}{| p{6cm} | p{9cm} |}\\ \hline
+Chemical Name(s) & #1 \\ \hline
+CAS number & #2 \\ \hline
+Title of Project & #3 \\ \hline
+Principal investigator & #4 \\ \hline
+Department & #5\\ \hline
+Date of assesment & #6\\ \hline
+Location of Work & #7\\ \hline
+\end{tabular}
+\end{table}
+}
+
+\newcommand{\Sectionone}[1]{
+\section{Project or Activity}
+\begin{table}[h !]
+\centering
+\begin{tabular}{|p{\textwidth}|}\hline
+\cellcolor{lightgray!75}1.1: Brief description of project or activity \\ \hline
+#1 \\ \hline
+\end{tabular}
+\end{table}
+}
+
+\newcommand{\Sectiontwo}[4]{
+\newpage
+\section{Hazards}
+\begin{table}[h !]
+\centering
+\begin{array}{|p{\textwidth}|}\hline
+\cellcolor{lightgray!75}2.1Hazardous Substances used and Generated\\ \hline
+\begin{array}{p{0.18\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|p{.18\textwidth}}
+ &Hazardous Substance&Hazard Statements&Precautionary Statements&Workplace exposure limit \\ \hline
+ Chemicals&#1&#2&#3&#4\\ \hline
+ Carinogens, mutagens or reproductive toxins& & & & \\ hline
+ Dusts or Fumes & & & & \\ \hline
+ Asphyxiants & & & & \\ \hline
+ Other substances hazardous to health & & & & \\
+\end{array} \\ \hline
+\end{array}
+\end{table}
+}
+
+\newcommand{\Sectionthree}[1]{
+\newpage
+\section{Risks}
+\begin{table}[h !]
+\begin{tabular}{|p{\textwidth}|}
+\cellcolor{lightgray!75}3.1: Human diseases, illnesses or conditions associated with hazarous substances \\ \hline
+#1 \\ \hline
+\cellcolor{lightgray!75}3.2: potential routes of exposure \\ \hline
+Inhalation  $\boxdot$  Ingestion $\boxdot$ injection $\boxdot$ Absorption $\boxdot$ Other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}3.3: Use of hazardous substances \\ \hline
+small scale $\boxdot$ medium scale $\boxdot$ large scale $\boxdot$ fieldwork $\boxdot$ animals $\boxdot$plants $\boxdot$ maintenance $\boxdot$ cleaning $\boxdot$ other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}3.4: Frequency of use \\ \hline
+Daily $\boxdot$ Weekly $\boxdot$ Monthly $\boxdot$ Other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}3.5:Maximum amount or concentration used \\ \hline
+Negligible $\boxdot$ Low $\boxdot$ Medium $\boxdot$ High $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}3.6: Potential for exposure to hazardous substances \\ \hline
+Negligible $\boxdot$ Low $\boxdot$ Medium $\boxdot$ High $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}3.7: Who might be at risk \\ \hline
+Staff $\boxdot$ Students $\boxdot$ Visitors $\boxdot$ Public $\boxdot$ Young People ($\lessthan$18 yo) $\boxdot$ New and expectant mothers $\boxdot$ other $\boxdot$ \\ \hline
+\cellcolor{lightgray!85}3.8: Assesment of risk to human health \\ \hline
+Level of risk : Low $\boxdot$  High $\boxdot$  Very High $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}3.9: Assesment of risk to environment \\ \hline
+Level of risk: low $\boxdot$ High $\boxdot$ Very High$\boxdot$ \\ \hline
+\end{tabular}
+\end{table}
+}
+
+\newcommand{\Sectionfour}[9]{
+\newpage
+\section{Controls to Reduce Risks as Low as Possible}
+\begin{table}[h !]
+\centering
+\begin{tabular}{|p{\textwidth}|}\hline
+\cellcolor{lightgray!75}4.1: Containment \\ \hline
+Laboratory $\boxdot$ Room $\boxdot$ Controlled Area $\boxdot$ Total Containment $\boxdot$ Glove box $\boxdot$ Fume cupboard $\boxdot$ Local exhaust ventilation $\boxdot$ access control $\boxdot$ other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}4.2: Other Controls \\ \hline
+#1 \\ \hline
+\cellcolor{lightgray!75}4.3: Storage of Hazardous substances \\ \hline
+#2 \\ \hline
+\cellcolor{lightgray!75}4.4: Transport of hazardous substances \\ \hline
+#3 \\ \hline
+\cellcolor{lightgray!75}4.5: Personal protective equipment (PPE) \\ \hline
+Lab coat $\boxdot$ Overalls $\boxdot$ Chemical suit $\boxdot$ Disposable clothing $\boxdot$ Apron $\boxdot$ Spectacles $\boxdot$ \\
+Goggles $\boxdot$ Face Shield $\boxdot$ Gloves $\boxdot$ Special Headwear $\boxdot$ Special Footwear $\boxdot$ Other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}4.6: Respiratory protective equipment (RPE) \\ \hline
+Disposable mask $\boxdot$ Filter Mask $\boxdot$ Half face respirator $\boxdot$ Full face respirator $\boxdot$ Breathing apparatus $\boxdot$ Powered respirator $\boxdot$ Other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}4.7: Waste management and disposal \\ \hline
+liquid $\boxdot$ solid $\boxdot$ gas $\boxdot$ inorganic $\boxdot$ organic $\boxdot$ aqueous $\boxdot$ mixed $\boxdot$ other $\boxdot$ \\ \hline
+\cellcolor{lightgray!75}4.8: Monitoring Exposure \\ \hline
+#4 \\ \hline
+\cellcolor{lightgray!75}4.9: Health surveillance \\ \hline
+#5  \\ \hline
+\cellcolor{lightgray!75}4.10: Instruction, Training and Supervision\\ \hline
+Special Instructions are required to carry out the work (yes $\boxdot$ no $\boxdot$) \\ \hline
+#6  \\ \hline
+Special training is required to safely carry out the work (yes $\boxdot$ no $\boxdot$) \\ \hline
+#7 \\ \hline
+A: Work may not be carried out without direct personal supervision (yes $\boxdot$ no $\boxdot$) \\ \hline
+#8 \\ \hline
+B: Work may not be started without the advice and approval of supervisor (yes $\boxdot$ no $\boxdot$)\\ \hline
+\par \\ \hline
+C: Work can be carried out without direct supervision (yes $\boxdot$ no $\boxdot$)\\ \hline
+\par \\ \hline
+\begin{tabular}{p{0.2\textwidth}|p{0.65\textwidth}}
+Supervisors(s) & #9 \\ 
+\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
+}
+
+\newcommand{\Sectionfive}[9]{
+\newpage
+\section{Emergency Procedures}
+\begin{table}[h !]
+\centering
+\begin{tabular}{|p{\textwidth}|}\hline
+\cellcolor{lightgray!75}5.1: Emergency Procedures \\ \hline
+#1 \\ \hline
+\cellcolor{lightgray!75}5.2: Minor spillage or release \\ \hline
+\begin{tabular}{p{0.2\textwidth}|p{0.7\textwidth}}
+Specify procedure & #2 \end{tabular}\\ \hline
+\begin{tabular}{p{0.2\textwidth}|p{0.7\textwidth}}
+Other actions & \begin{tabular}{p{\columnwidth}}
+                Evacuate and secure laboratory/area $\boxdot$ \\ \hline
+                Inform competent person $\boxdot$ \end{tabular} 
+\end{tabular}\\ \hline
+\cellcolor{lightgray!75}5.3: Major spillage or release \\ \hline
+\begin{tabular}{p{0.2\textwidth}|p{0.7\textwidth}}
+Specify procedure & #3 \end{tabular}\\ \hline
+\begin{tabular}{p{0.2\textwidth}|p{0.7\textwidth}}
+Other actions & \begin{tabular}{p{\columnwidth}}
+                Evacuate and secure laboratory/area $\boxdot$ \\ \hline
+                Inform competent person $\boxdot$ \end{tabular} 
+\end{tabular}\\ \hline
+\cellcolor{lightgray!75}5.4: Fire precautions \\ \hline
+Carbon dioxide $\botdot$ water $\botdot$ powder $\botdot$ foam $\botdot$ blanket $\botdot$ automatic fire suppresion $\botdot$ other $\botdot$ \\ \hline
+#4 \\ \hline
+\cellcolor{lightgray!75}5.5: First aid \\ \hline
+Wash with copious amounts of water and apply PEG 300 for phenol $\botdot$ \\
+Wash with copious amounts of water and apply calcium gluconate gel for hydrofluoric acid $\botdot$ \\
+Remove affected clothing and wash with copious amounts of water for skin contact $\botdot$
+Oxygen for cyanide $\botdot$
+Eye wash station $\botdot$
+Emergency Shower $\botdot$
+Other $\botdot$
+#5
+\\ \hline
+See 5.1, in all cases of exposure consult a physican, provide this form to the consulting physician. \\ \hline
+\cellcolor{lightgray!75}5.6: Emergency Contacts\\ \hline
+\begin{tabular}{p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}}
+Name: #6 & Position #7 & Telephone #8 \end{tabular} \\ \hline
+\begin{tabular}{p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}}
+ & Responsible Person #9 & \\ \end{tabular} \\ \hline
+\end{tabular}
+\end{table}}
+
+\newcommand{\Sectionsix}[2]{
+\newpage
+\section{Approval}
+\begin{table}[h !]
+\centering
+\begin{tabular}{|p{\textwidth}|}\hline
+\cellcolor{lightgray!75}6.1: Assesor \\ \hline
+\begin{tabular}{p{.3\textwidth}|p{.3\textwidth}|p{.3\textwidth}}
+Name: #1 & Signature & Date \today \end{tabular} \\ \hline
+\cellcolor{lightgray!75}6.2: Responsible Person \\ \hline
+\begin{tabular}{p{.3\textwidth}|p{.3\textwidth}|p{.3\textwidth}}
+Name: #2 & Signature & Date \today \end{tabular} \\ \hline
+\end{tabular}
+\end{table}}
+
+
+
+
+
+
+
+
+
